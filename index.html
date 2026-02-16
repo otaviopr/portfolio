@@ -416,24 +416,28 @@
 
           console.log('[Shim] Detected intended path:', targetPath);
 
-          // Fix: Strip query params and hash before splitting
+          // Fix: Strip query params and hash before checking
           var cleanPath = targetPath.split('?')[0].split('#')[0];
+          console.log('[Shim] Clean path:', cleanPath);
 
-          // Extract the last segment (e.g. /portfolio/hospitality-en -> hospitality-en)
-          var segments = cleanPath.split('/').filter(p => p.length > 0);
-          var targetUri = segments[segments.length - 1];
+          // Find page by URI inclusion in the intended path
+          // This avoids issues with path splitting and partial matches
+          var pages = mag.pages || [];
+          var foundPage = pages.find(p => cleanPath.indexOf('/' + p.uri) !== -1 || cleanPath === p.uri || cleanPath.endsWith('/' + p.uri));
 
-          if (targetUri) {
-            console.log('[Shim] Attempting navigation to URI:', targetUri);
-            var pages = mag.pages || [];
-            var pageIndex = pages.findIndex(p => p.uri === targetUri);
-
-            if (pageIndex !== -1) {
-              console.log('[Shim] Found page index:', pageIndex, 'for URI:', targetUri);
-              // Force navigation to the specific page index
-              mag.showPage(pageIndex);
-            } else {
-              console.log('[Shim] Page not found for URI:', targetUri);
+          if (foundPage) {
+            console.log('[Shim] Found page URI:', foundPage.uri);
+            var pageIndex = pages.indexOf(foundPage);
+            mag.showPage(pageIndex);
+          } else {
+            console.log('[Shim] Page not found for path:', cleanPath);
+            // Fallback: try finding by exact match of last segment if inclusion failed
+            var segments = cleanPath.split('/').filter(p => p.length > 0);
+            var targetUri = segments[segments.length - 1];
+            var fallbackPage = pages.find(p => p.uri === targetUri);
+            if (fallbackPage) {
+              console.log('[Shim] Fallback match found:', fallbackPage.uri);
+              mag.showPage(pages.indexOf(fallbackPage));
             }
           }
         }

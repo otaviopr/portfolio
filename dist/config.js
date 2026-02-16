@@ -6,13 +6,8 @@ var path = window.location.pathname;
 
 // GitHub Pages fix: if on github.io, root should be the repo name /repo/
 if (window.location.hostname === 'otaviopr.github.io') {
-  // Standard GitHub Pages: /repo-name/
-  var repoName = window.location.pathname.split('/')[1];
-  if (repoName) {
-    path = '/' + repoName + '/';
-  } else {
-    path = '/'; // Fallback if no repo name found
-  }
+  // Hardcoded for project site to prevent errors
+  path = '/portfolio/';
 } else if (window.location.hostname === 'otaviopr.com' || window.location.hostname === 'www.otaviopr.com') {
   // Custom Domain: Root is /
   path = '/';
