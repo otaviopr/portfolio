@@ -72,10 +72,11 @@
 
           // Replace the current state with the intended path
           // We trust 404.html to provide the correct absolute path
-          // DISABLED: Testing if this conflicts with Readymag router. Let Shim handle it.
-          // window.history.replaceState(null, null,
-          //   path + (q.q ? ('?' + q.q) : '') + l.hash
-          // );
+          // Replace the current state with the intended path
+          // We trust 404.html to provide the correct absolute path
+          window.history.replaceState(null, null,
+            path + (q.q ? ('?' + q.q) : '') + l.hash
+          );
         }
       }
     }(window.location));
@@ -429,7 +430,27 @@
           if (foundPage) {
             console.log('[Shim] Found page URI:', foundPage.uri);
             var pageIndex = pages.indexOf(foundPage);
-            mag.showPage(pageIndex);
+
+            // Enforcer: Retry navigation until successful
+            var attempts = 0;
+            var enforcer = setInterval(function () {
+              var currentUri = window.RM.viewerRouter.mag.currentPage ? window.RM.viewerRouter.mag.currentPage.uri : null;
+              // Check if we are ALREADY on the correct page
+              if (currentUri === foundPage.uri) {
+                console.log('[Shim] Navigation confirmed to:', currentUri);
+                clearInterval(enforcer);
+              } else {
+                console.log('[Shim] Enforcing navigation to index:', pageIndex, 'Current:', currentUri);
+                // Force showPage
+                mag.showPage(pageIndex);
+                attempts++;
+                // Stop after 20 attempts (10 seconds)
+                if (attempts > 20) {
+                  console.log('[Shim] Navigation timed out. Stopping enforcer.');
+                  clearInterval(enforcer);
+                }
+              }
+            }, 500);
           } else {
             console.log('[Shim] Page not found for path:', cleanPath);
             // Fallback: try finding by exact match of last segment if inclusion failed
