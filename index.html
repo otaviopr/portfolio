@@ -4,18 +4,23 @@
 <head>
   <meta charSet="utf-8" />
   <script>
-    // GitHub Pages SPA Fix - Asset Path Handling
+    // Asset Path Handling
     (function () {
+      var base = document.createElement('base');
       var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
+
       if (isGitHub) {
         var pathSegments = window.location.pathname.split('/').filter(p => p.length > 0);
         if (pathSegments.length > 0) {
-          var repo = pathSegments[0];
-          var base = document.createElement('base');
-          base.href = '/' + repo + '/';
-          document.head.insertBefore(base, document.head.firstChild);
+          base.href = '/' + pathSegments[0] + '/';
+        } else {
+          base.href = '/';
         }
+      } else {
+        base.href = '/';
       }
+
+      document.head.insertBefore(base, document.head.firstChild);
     })();
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
