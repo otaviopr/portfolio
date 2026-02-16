@@ -416,8 +416,11 @@
 
           console.log('[Shim] Detected intended path:', targetPath);
 
+          // Fix: Strip query params and hash before splitting
+          var cleanPath = targetPath.split('?')[0].split('#')[0];
+
           // Extract the last segment (e.g. /portfolio/hospitality-en -> hospitality-en)
-          var segments = targetPath.split('/').filter(p => p.length > 0);
+          var segments = cleanPath.split('/').filter(p => p.length > 0);
           var targetUri = segments[segments.length - 1];
 
           if (targetUri) {
