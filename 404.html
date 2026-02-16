@@ -10,16 +10,13 @@
         // https://github.com/rafrex/spa-github-pages
         // This script takes the current url and redirects the user to the
         // index.html page with URL taken in a query string.
+        // Simplify: Pass the full path to index.html
+        // This ensures the destination deals with the absolute path correctly
         var path = window.location.pathname;
-        var repo = '/portfolio'; // Your repository name
-
-        // If the path starts with the repo, strip it to get the relative path
-        if (path.startsWith(repo)) {
-            path = path.substring(repo.length);
-        }
-
         var q = window.location.search;
         var hash = window.location.hash;
+
+        var repo = '/portfolio'; // Your repository name
 
         window.location.replace(
             repo + '/?p=' + encodeURIComponent(path + q + hash)

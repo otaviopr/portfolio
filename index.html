@@ -71,9 +71,9 @@
           window.intendedPath = path;
 
           // Replace the current state with the intended path
-          // This restores the URL so the app sees /portfolio/hospitality-en/
+          // We trust 404.html to provide the correct absolute path
           window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + path + (q.q ? ('?' + q.q) : '') + l.hash
+            path + (q.q ? ('?' + q.q) : '') + l.hash
           );
         }
       }
