@@ -66,6 +66,10 @@
           if (path.length > 1 && path.endsWith('/')) {
             path = path.slice(0, -1);
           }
+
+          // Store intended path for shim script to use later
+          window.intendedPath = path;
+
           // Replace the current state with the intended path
           // This restores the URL so the app sees /portfolio/hospitality-en/
           window.history.replaceState(null, null,
@@ -400,6 +404,39 @@
   <div class="popups"></div>
   <div id="tmp"></div>
   <div id="fake" style="position:fixed;opacity:1"></div>
+  <script>
+    // GitHub Pages Shim - Force Navigation to Intended Page
+    (function () {
+      var checkInterval = setInterval(function () {
+        // Wait for RM viewer and our intendedPath to be available
+        if (window.RM && window.RM.viewerRouter && window.RM.viewerRouter.mag && window.intendedPath) {
+          clearInterval(checkInterval);
+          var mag = window.RM.viewerRouter.mag;
+          var targetPath = window.intendedPath;
+
+          console.log('[Shim] Detected intended path:', targetPath);
+
+          // Extract the last segment (e.g. /portfolio/hospitality-en -> hospitality-en)
+          var segments = targetPath.split('/').filter(p => p.length > 0);
+          var targetUri = segments[segments.length - 1];
+
+          if (targetUri) {
+            console.log('[Shim] Attempting navigation to URI:', targetUri);
+            var pages = mag.pages || [];
+            var pageIndex = pages.findIndex(p => p.uri === targetUri);
+
+            if (pageIndex !== -1) {
+              console.log('[Shim] Found page index:', pageIndex, 'for URI:', targetUri);
+              // Force navigation to the specific page index
+              mag.showPage(pageIndex);
+            } else {
+              console.log('[Shim] Page not found for URI:', targetUri);
+            }
+          }
+        }
+      }, 100);
+    })();
+  </script>
   <script src="dist/viewer.js" type="module"></script>
 </body>
 
