@@ -21,7 +21,9 @@ if (!path) path = "/";
 
 window.RM.config = {
   root: path,
-  pushState: true
+  pushState: true,
+  isDownloadedSource: true,
+  publicPath: 'dist'
 }
 
 window.chunkURL = "dist/";
