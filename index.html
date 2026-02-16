@@ -440,9 +440,9 @@
                 console.log('[Shim] Navigation confirmed to:', currentUri);
                 clearInterval(enforcer);
               } else {
-                console.log('[Shim] Enforcing navigation to index:', pageIndex, 'Current:', currentUri);
-                // Force showPage
-                mag.showPage(pageIndex);
+                console.log('[Shim] Enforcing navigation to index:', pageIndex + 1, 'Current:', currentUri);
+                // Force showPage (1-based index)
+                mag.showPage(pageIndex + 1);
                 attempts++;
                 // Stop after 20 attempts (10 seconds)
                 if (attempts > 20) {
