@@ -10,13 +10,7 @@ if (path.length > 1 && !path.endsWith('/')) {
 // Ensure root is at least "/"
 if (!path) path = "/";
 
-// HOSTING FIX: Set base tag to root to fix relative asset loading on subpages
-var base = document.querySelector('base');
-if (!base) {
-  base = document.createElement('base');
-  document.head.appendChild(base);
-}
-base.href = path;
+// Base tag is now handled in index.html for GitHub Pages compatibility
 
 window.RM.config = {
   root: path,

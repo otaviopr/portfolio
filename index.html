@@ -3,6 +3,21 @@
 
 <head>
   <meta charSet="utf-8" />
+  <script>
+    // GitHub Pages SPA Fix - Asset Path Handling
+    (function () {
+      var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
+      if (isGitHub) {
+        var pathSegments = window.location.pathname.split('/').filter(p => p.length > 0);
+        if (pathSegments.length > 0) {
+          var repo = pathSegments[0];
+          var base = document.createElement('base');
+          base.href = '/' + repo + '/';
+          document.head.insertBefore(base, document.head.firstChild);
+        }
+      }
+    })();
+  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Readymag" data-project="1569895" data-user="otaviopr" data-is-exported="true"
     data-exported-at="1771263614548" />
