@@ -72,9 +72,10 @@
 
           // Replace the current state with the intended path
           // We trust 404.html to provide the correct absolute path
-          window.history.replaceState(null, null,
-            path + (q.q ? ('?' + q.q) : '') + l.hash
-          );
+          // DISABLED: Testing if this conflicts with Readymag router. Let Shim handle it.
+          // window.history.replaceState(null, null,
+          //   path + (q.q ? ('?' + q.q) : '') + l.hash
+          // );
         }
       }
     }(window.location));
