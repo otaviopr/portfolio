@@ -62,6 +62,10 @@
         });
         if (q.p !== undefined) {
           var path = decodeURIComponent(q.p);
+          // Readymag Fix: Strip trailing slash to match page URIs
+          if (path.length > 1 && path.endsWith('/')) {
+            path = path.slice(0, -1);
+          }
           // Replace the current state with the intended path
           // This restores the URL so the app sees /portfolio/hospitality-en/
           window.history.replaceState(null, null,
