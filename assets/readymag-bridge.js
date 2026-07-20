@@ -26,9 +26,10 @@
     root.querySelectorAll('a').forEach(link => { if (/resume|curr[ií]culo/i.test(clean(link.textContent)) && site.links?.resume) link.href = site.links.resume; });
     if (project.banner) { const picture = root.querySelector('.widget-picture img'); if (picture) picture.src = project.banner; }
   }
-  fetch('/content/site.json').then(response => response.ok ? response.json() : null).then(site => {
-    if (!site) return; const info = route(); let attempts = 0;
+  fetch('/content/site.json').then(response => response.ok ? response.json() : null).then(initialSite => {
+    if (!initialSite) return; let site = initialSite; const info = route(); let attempts = 0;
     const apply = () => { const root = document.querySelector('#mags'); if (!root || !root.querySelector('.rmwidget')) return false; if (info) project(root,site,info); else home(root,site,location.pathname.toLowerCase().includes('/pt') ? 'pt' : 'en'); return true; };
+    window.addEventListener('message', event => { if (event.origin === location.origin && event.data?.type === 'otavio-cms-preview') { site = event.data.content; apply(); } });
     const observer = new MutationObserver(() => apply()); observer.observe(document.documentElement,{childList:true,subtree:true});
     const timer = setInterval(() => { apply(); if (++attempts > 120) { clearInterval(timer); observer.disconnect(); } },250);
   }).catch(() => {});

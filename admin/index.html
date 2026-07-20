@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Otávio — Content Studio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="preview.css" />
 </head>
 <body>
   <aside class="sidebar">
@@ -26,7 +27,7 @@
       <div class="crumb"><span id="view-label">Home page</span><em> / </em><strong>Content</strong></div>
       <div class="header-actions">
         <button class="preview" id="connect">Connect GitHub</button>
-        <button class="preview" id="preview">Preview <span>↗</span></button>
+        <button class="preview" id="preview">Live preview <span>↗</span></button>
         <button class="publish" id="publish">Publish changes</button>
       </div>
     </header>
@@ -68,6 +69,7 @@
   </main>
 
   <div class="modal hidden" id="language-modal"><div class="modal-card"><button class="close">×</button><p class="eyebrow">LOCALIZATION</p><h2>Languages</h2><p class="modal-copy">Each text field is stored independently per language. Images are shared across languages.</p><div class="language-list" id="language-list"></div><form id="add-language"><input required maxlength="40" placeholder="Language name (e.g. Español)"><input required maxlength="8" placeholder="Code (e.g. es)"><button class="button primary">Add language</button></form></div></div>
+  <aside class="live-preview hidden" id="live-preview"><div class="live-preview-bar"><span>LIVE PAGE PREVIEW</span><button id="close-preview">×</button></div><iframe id="preview-frame" title="Live portfolio preview"></iframe></aside>
   <div class="toast hidden" id="toast"></div>
   <script src="app.js"></script>
 </body>

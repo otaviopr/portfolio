@@ -6,7 +6,10 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 let db, language = 'en', activeProject = null, activeView = 'home', dirty = false, pendingFiles = [];
 
 function translations(item) { return item.translations[language] || item.translations.en; }
-function markDirty() { dirty = true; $('#save-status').textContent = 'Changes not published'; }
+function markDirty() { dirty = true; $('#save-status').textContent = 'Changes not published'; sendPreview(); }
+function previewUrl() { return activeView === 'project-editor' && activeProject ? `../project.html?slug=${encodeURIComponent(activeProject)}&lang=${encodeURIComponent(language)}` : '../'; }
+function sendPreview() { const frame = $('#preview-frame'); if (frame?.contentWindow) frame.contentWindow.postMessage({type:'otavio-cms-preview', content:db}, location.origin); }
+function openPreview() { const panel = $('#live-preview'); panel.classList.remove('hidden'); document.body.classList.add('previewing'); const frame = $('#preview-frame'); const url = previewUrl(); if (frame.dataset.url !== url) { frame.dataset.url = url; frame.src = url; } else sendPreview(); }
 function fallbackTranslation(template) { return clone(template || { title:'', tools:'', roles:'', intro:'', sections:[] }); }
 function renderLanguages() {
   const codes = Object.keys(db.translations);
@@ -55,7 +58,7 @@ function renderProjectEditor() {
   });
 }
 function moveSection(sections, index, direction) { const next = index + direction; if (next < 0 || next >= sections.length) return; [sections[index], sections[next]] = [sections[next], sections[index]]; markDirty(); renderProjectEditor(); }
-function showView(view) { activeView = view; $('#home-view').classList.toggle('hidden', view !== 'home'); $('#projects-view').classList.toggle('hidden', view !== 'projects'); $('#project-editor-view').classList.toggle('hidden', view !== 'project-editor'); $$('.nav-item[data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === view || (view === 'project-editor' && button.dataset.view === 'projects'))); $('#view-label').textContent = view === 'home' ? 'Home page' : 'Projects'; render(); }
+function showView(view) { activeView = view; $('#home-view').classList.toggle('hidden', view !== 'home'); $('#projects-view').classList.toggle('hidden', view !== 'projects'); $('#project-editor-view').classList.toggle('hidden', view !== 'project-editor'); $$('.nav-item[data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === view || (view === 'project-editor' && button.dataset.view === 'projects'))); $('#view-label').textContent = view === 'home' ? 'Home page' : 'Projects'; render(); if (!$('#live-preview').classList.contains('hidden')) openPreview(); }
 function render() { if (!db) return; renderLanguages(); if (activeView === 'home') renderHome(); if (activeView === 'projects') renderProjects(); if (activeView === 'project-editor') renderProjectEditor(); }
 function toast(message) { const item = $('#toast'); item.textContent = message; item.classList.remove('hidden'); setTimeout(() => item.classList.add('hidden'), 3500); }
 function openLanguages() {
@@ -82,7 +85,7 @@ async function init() {
   $('#add-language').onsubmit = event => { event.preventDefault(); const [nameInput, codeInput] = event.target.querySelectorAll('input'); const code = codeInput.value.trim().toLowerCase().replace(/[^a-z-]/g, ''); if (!code || db.translations[code]) return toast('Use a new language code.'); db.translations[code] = clone(db.translations.en); db.projects.forEach(project => project.translations[code] = clone(project.translations.en)); language = code; markDirty(); event.target.reset(); openLanguages(); render(); };
   $('#download-content').onclick = () => { const link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([JSON.stringify(db, null, 2)], {type:'application/json'})); link.download = 'site.json'; link.click(); URL.revokeObjectURL(link.href); };
   $('#import-content').onchange = async event => { try { db = JSON.parse(await event.target.files[0].text()); markDirty(); render(); toast('Content imported.'); } catch { toast('That is not a valid site.json file.'); } event.target.value = ''; };
-  $('#connect').onclick = () => location.href = `${API}/auth/login`; $('#preview').onclick = () => window.open('../', '_blank'); $('#publish').onclick = publish;
+  $('#connect').onclick = () => location.href = `${API}/auth/login`; $('#preview').onclick = openPreview; $('#close-preview').onclick = () => { $('#live-preview').classList.add('hidden'); document.body.classList.remove('previewing'); }; $('#preview-frame').onload = sendPreview; $('#publish').onclick = publish;
   window.addEventListener('beforeunload', event => { if (dirty) { event.preventDefault(); event.returnValue = ''; } }); render();
 }
 init().catch(error => { document.body.innerHTML = `<p style="padding:40px;font-family:sans-serif">${escapeHtml(error.message)}</p>`; });
