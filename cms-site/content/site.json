@@ -1,8 +1,79 @@
 {
-  "home":{"banner":"../img/5d96001aea3dde00882f4440/1569895/upload-88d55df9-ddc9-431d-9f53-483306cc1c2d.jpg"},
-  "translations":{"en":{"nav":{"work":"Work","about":"About"},"hero":{"kicker":"PRODUCT · USER EXPERIENCE · INTERFACE","title":"Hi! I’m Otávio Ribeiro","description":"I create rich experiences for brands and products that are clear, useful and memorable."},"work":{"label":"Selected work"},"about":{"label":"About","text":"I’m a designer with a passion for creating thoughtful digital experiences. I work across strategy, product and visual design to turn ideas into things people enjoy using.","contact":"Let’s work together ↗"},"back":"All work"},"pt":{"nav":{"work":"Projetos","about":"Sobre"},"hero":{"kicker":"PRODUTO · EXPERIÊNCIA · INTERFACE","title":"Olá! Eu sou Otávio Ribeiro","description":"Eu crio experiências ricas para marcas e produtos que são claras, úteis e memoráveis."},"work":{"label":"Projetos selecionados"},"about":{"label":"Sobre","text":"Sou designer e tenho paixão por criar experiências digitais cuidadosas. Trabalho entre estratégia, produto e design visual para transformar ideias em coisas que as pessoas gostam de usar.","contact":"Vamos trabalhar juntos ↗"},"back":"Todos os projetos"}},
-  "projects":[
-    {"slug":"open-medicine","banner":"../img/5d96001aea3dde00882f4440/1569895/upload-63797827-66dc-4699-a61e-8ca669ca30df.png","translations":{"en":{"title":"Open Medicine","tools":"Product design · UX/UI","roles":"Product strategy\nUX & UI design\nVisual direction","intro":"Making complex healthcare information clearer and more accessible.","sections":[{"subtitle":"The challenge","text":"We brought clarity to a complex system through a focused and human-centered experience.","image":"../img/5d96001aea3dde00882f4440/1569895/upload-2aec58e2-7442-4178-9dbc-fae5331345ed_w-598.jpg"}]},"pt":{"title":"Open Medicine","tools":"Design de produto · UX/UI","roles":"Estratégia de produto\nDesign UX & UI\nDireção visual","intro":"Tornando informações complexas de saúde mais claras e acessíveis.","sections":[{"subtitle":"O desafio","text":"Trouxemos clareza a um sistema complexo através de uma experiência focada e centrada nas pessoas.","image":"../img/5d96001aea3dde00882f4440/1569895/upload-2aec58e2-7442-4178-9dbc-fae5331345ed_w-598.jpg"}]}}},
-    {"slug":"hospitality","banner":"../img/5d96001aea3dde00882f4440/1569895/upload-f8327d91-a0f1-44cc-82fa-e10256ae99f5_w-988.jpg","translations":{"en":{"title":"Hospitality","tools":"Experience design · Interface","roles":"UX strategy\nInterface design","intro":"A considered digital experience for the hospitality industry.","sections":[{"subtitle":"A welcoming system","text":"An adaptable visual language that helps every interaction feel effortless."}]},"pt":{"title":"Hospitality","tools":"Design de experiência · Interface","roles":"Estratégia de UX\nDesign de interface","intro":"Uma experiência digital cuidadosa para o setor de hospitalidade.","sections":[{"subtitle":"Um sistema acolhedor","text":"Uma linguagem visual adaptável que torna cada interação simples."}]}}}
+  "home": {
+    "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-88d55df9-ddc9-431d-9f53-483306cc1c2d.jpg"
+  },
+  "translations": {
+    "en": {
+      "nav": { "work": "Work", "about": "About" },
+      "hero": { "kicker": "PRODUCT · USER EXPERIENCE · INTERFACE", "title": "Hi! I’m Otávio Ribeiro", "description": "I create rich experiences for brands and products that are clear, useful and memorable." },
+      "work": { "label": "Selected work" },
+      "about": { "label": "About", "text": "I’m a designer with a passion for creating thoughtful digital experiences. I work across strategy, product and visual design to turn ideas into things people enjoy using.", "contact": "Let’s work together ↗" },
+      "back": "All work"
+    },
+    "pt": {
+      "nav": { "work": "Projetos", "about": "Sobre" },
+      "hero": { "kicker": "PRODUTO · EXPERIÊNCIA · INTERFACE", "title": "Olá! Eu sou Otávio Ribeiro", "description": "Eu crio experiências ricas para marcas e produtos que são claras, úteis e memoráveis." },
+      "work": { "label": "Projetos selecionados" },
+      "about": { "label": "Sobre", "text": "Sou designer e tenho paixão por criar experiências digitais cuidadosas. Trabalho entre estratégia, produto e design visual para transformar ideias em coisas que as pessoas gostam de usar.", "contact": "Vamos trabalhar juntos ↗" },
+      "back": "Todos os projetos"
+    }
+  },
+  "projects": [
+    {
+      "slug": "hospitality",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-f8327d91-a0f1-44cc-82fa-e10256ae99f5_w-988.jpg",
+      "translations": {
+        "en": { "title": "Hospitality Guest Registration", "tools": "Figma · FigJam · Maze · Paper sketches", "roles": "Ideation\nUser flow\nUX/UI\nPrototyping & user testing", "intro": "Redesigning a guest-registration product to make a high-stakes form clearer, quicker and easier to complete.", "sections": [{ "subtitle": "Organizing the scope", "text": "Working with the product owner and stakeholders, I helped define the approach, the steps and the measures of success using the Double Diamond process." }, { "subtitle": "Discovery", "text": "Interviews with hotel supervisors and managers revealed their pain points and needs. Their insight guided the new experience." }, { "subtitle": "A clearer form", "text": "The new experience improves clarity, usability and alignment with each hotel’s brand while reducing the time required to finish registration." }] },
+        "pt": { "title": "Cadastro de Hóspedes", "tools": "Figma · FigJam · Maze · Esboços em papel", "roles": "Ideação\nFluxo do usuário\nUX/UI\nProtótipos e testes", "intro": "Redesenhando um produto de cadastro de hóspedes para tornar um formulário importante mais claro, rápido e simples.", "sections": [{ "subtitle": "Organizando o escopo", "text": "Com o product owner e os stakeholders, defini os passos e as métricas de sucesso usando o processo de Duplo Diamante." }, { "subtitle": "Descoberta", "text": "Entrevistas com supervisores e gestores de hotéis revelaram dores e necessidades que orientaram a nova experiência." }, { "subtitle": "Um formulário mais claro", "text": "A nova experiência melhora a clareza, a usabilidade e o alinhamento com a marca de cada hotel, reduzindo o tempo de preenchimento." }] }
+      }
+    },
+    {
+      "slug": "open-medicine",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-63797827-66dc-4699-a61e-8ca669ca30df.png",
+      "translations": {
+        "en": { "title": "Open Medicine", "tools": "Product design · UX/UI", "roles": "Product strategy\nUX & UI design\nVisual direction", "intro": "Making complex healthcare information clearer and more accessible.", "sections": [{ "subtitle": "The challenge", "text": "We brought clarity to a complex system through a focused and human-centered experience.", "image": "../img/5d96001aea3dde00882f4440/1569895/upload-2aec58e2-7442-4178-9dbc-fae5331345ed_w-598.jpg" }] },
+        "pt": { "title": "Open Medicine", "tools": "Design de produto · UX/UI", "roles": "Estratégia de produto\nDesign UX & UI\nDireção visual", "intro": "Tornando informações complexas de saúde mais claras e acessíveis.", "sections": [{ "subtitle": "O desafio", "text": "Trouxemos clareza a um sistema complexo através de uma experiência focada e centrada nas pessoas.", "image": "../img/5d96001aea3dde00882f4440/1569895/upload-2aec58e2-7442-4178-9dbc-fae5331345ed_w-598.jpg" }] }
+      }
+    },
+    {
+      "slug": "operations-and-maintenance",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-5df66aa7-ab62-4279-98c7-9781b043b340_w-988.jpg",
+      "translations": {
+        "en": { "title": "O&M Operations and Maintenance", "tools": "Sketch · Useberry · Paper sketches", "roles": "Ideation\nUser flow\nUX/UI\nPrototyping & user testing", "intro": "Recreating an operations and maintenance platform around the real needs of Engie’s teams.", "sections": [{ "subtitle": "Understanding", "text": "I helped facilitate a Design Thinking session with coordinators, senior managers, technicians, product owners and project managers to identify the platform’s needs and pain points." }, { "subtitle": "Product goals", "text": "The new product brought teams into one tailored platform, surfaced real-time information and supported faster, better SLA delivery." }, { "subtitle": "Solution design", "text": "User flows, sketches and tested interfaces shaped dashboards for decision makers and a practical app experience for maintenance personnel." }] },
+        "pt": { "title": "Operações e Manutenção", "tools": "Sketch · Useberry · Esboços em papel", "roles": "Ideação\nFluxo do usuário\nUX/UI\nProtótipos e testes", "intro": "Redesenhando uma plataforma de operações e manutenção a partir das necessidades reais das equipes da Engie.", "sections": [{ "subtitle": "Entendimento", "text": "Facilitei uma sessão de Design Thinking com coordenadores, gestores, técnicos, product owners e gerentes de projeto." }, { "subtitle": "Objetivos do produto", "text": "O novo produto unificou equipes, mostrou informações em tempo real e apoiou entregas melhores de SLA." }, { "subtitle": "Design da solução", "text": "Fluxos, esboços e interfaces testadas orientaram dashboards e uma experiência prática para equipes de manutenção." }] }
+      }
+    },
+    {
+      "slug": "mobnit",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-a7966883-8aab-4a0a-a3fc-4179dd7f2ad1_w-988.jpg",
+      "translations": {
+        "en": { "title": "MobNit", "tools": "Sketch · InVision", "roles": "Ideation\nUser flow\nUX/UI", "intro": "A mobility-as-a-service concept that brings public and private transportation into one simple app.", "sections": [{ "subtitle": "Understanding", "text": "The project explored how a city could make commuting better by integrating public and private transportation, routes and payment methods." }, { "subtitle": "Solution design", "text": "A straightforward interface suggests nearby journeys, accepts destinations quickly and supports payments and QR-code ticket validation." }, { "subtitle": "Outcomes", "text": "The concept gives people one place to plan, pay for and understand every part of a multi-modal trip." }] },
+        "pt": { "title": "MobNit", "tools": "Sketch · InVision", "roles": "Ideação\nFluxo do usuário\nUX/UI", "intro": "Um conceito de mobilidade como serviço que reúne transporte público e privado em um único app.", "sections": [{ "subtitle": "Entendimento", "text": "O projeto explorou como uma cidade poderia integrar transporte, rotas e pagamentos para melhorar o deslocamento." }, { "subtitle": "Design da solução", "text": "Uma interface simples sugere trajetos próximos, recebe destinos rapidamente e oferece pagamento e validação de bilhetes por QR code." }, { "subtitle": "Resultados", "text": "O conceito oferece um único lugar para planejar, pagar e entender uma viagem multimodal." }] }
+      }
+    },
+    {
+      "slug": "music-streaming-rebrand",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-5d85ec07-4da4-48ec-81d4-be95662d6a74.png",
+      "translations": {
+        "en": { "title": "Music Streaming Rebranding", "tools": "Photoshop · After Effects · InVision", "roles": "Ideation\nUX/UI", "intro": "Rethinking a music-streaming platform to express a new brand vision and unlock better product experiences.", "sections": [{ "subtitle": "Understanding", "text": "The objective was to rebrand the platform while using new metrics, account capabilities and user insight to rethink the service." }, { "subtitle": "Solution design", "text": "The new interface connected the product to the parent brand and introduced live radio, music identification, plan integrations and improved access." }, { "subtitle": "Learning from data", "text": "Web and app analytics, together with the BI team, made it possible to understand different user groups and guide future improvements." }] },
+        "pt": { "title": "Rebranding de Streaming de Música", "tools": "Photoshop · After Effects · InVision", "roles": "Ideação\nUX/UI", "intro": "Repensando uma plataforma de streaming de música para expressar uma nova visão de marca e melhorar a experiência do produto.", "sections": [{ "subtitle": "Entendimento", "text": "O objetivo foi rebrandear a plataforma e usar métricas, contas e insights para repensar o serviço." }, { "subtitle": "Design da solução", "text": "A nova interface conectou o produto à marca e introduziu rádio ao vivo, identificação de música e integrações com planos." }, { "subtitle": "Aprendendo com dados", "text": "Analytics de web e app, junto com a equipe de BI, ajudaram a entender grupos de usuários e orientar melhorias." }] }
+      }
+    },
+    {
+      "slug": "ringback-tone-service",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-bcd6ca13-ea64-432b-b89c-8784d6f9cf29.jpg",
+      "translations": {
+        "en": { "title": "Ringback Tone Service", "tools": "Photoshop · InVision · After Effects", "roles": "Ideation\nUser flow\nUX/UI\nPrototyping", "intro": "Making a ringback-tone service accessible through a simple mobile experience instead of an IVR call.", "sections": [{ "subtitle": "Understanding", "text": "Research showed that many customers already used smartphones but found the existing IVR subscription and activation flow difficult." }, { "subtitle": "Solution design", "text": "The new app connected directly to the service, let customers sign in with a phone number and made song activation fast and clear." }, { "subtitle": "Building with the team", "text": "Working with the development team from the first screens onward helped translate Android interaction patterns into a practical product." }] },
+        "pt": { "title": "Serviço de Ringback Tone", "tools": "Photoshop · InVision · After Effects", "roles": "Ideação\nFluxo do usuário\nUX/UI\nProtótipos", "intro": "Tornando um serviço de ringback tone acessível por uma experiência mobile simples, sem depender de uma ligação IVR.", "sections": [{ "subtitle": "Entendimento", "text": "A pesquisa mostrou que muitos clientes já usavam smartphones, mas tinham dificuldade com a assinatura e ativação pelo IVR." }, { "subtitle": "Design da solução", "text": "O novo app se conecta diretamente ao serviço, permite login por telefone e torna a ativação de músicas rápida e clara." }, { "subtitle": "Construindo com o time", "text": "O trabalho com desenvolvimento desde as primeiras telas ajudou a transformar padrões Android em um produto prático." }] }
+      }
+    },
+    {
+      "slug": "tracs",
+      "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-91b7c670-aa01-4c67-873c-0b2fbdf9dc2f_w-962.png",
+      "translations": {
+        "en": { "title": "Offline Song Chart App", "tools": "Photoshop · InVision · After Effects", "roles": "Ideation\nUser flow\nUX/UI\nPrototyping", "intro": "Designing a low-data music service that gives prepaid mobile customers a simple way to discover and listen offline.", "sections": [{ "subtitle": "Understanding", "text": "Tracfone wanted an offline music service for customers who could buy and download curated music packs through the carrier network." }, { "subtitle": "Solution design", "text": "The app offers rotating genre charts, seasonal playlists, favourites and updates while keeping the monthly song allowance clear." }, { "subtitle": "A painless start", "text": "Signing in with a carrier phone number, subscribing and choosing playlists to sync were designed to be quick and straightforward." }] },
+        "pt": { "title": "App de Paradas Musicais Offline", "tools": "Photoshop · InVision · After Effects", "roles": "Ideação\nFluxo do usuário\nUX/UI\nProtótipos", "intro": "Um serviço de música de baixo consumo de dados para clientes pré-pagos descobrirem e ouvirem músicas offline.", "sections": [{ "subtitle": "Entendimento", "text": "A Tracfone buscava um serviço offline onde clientes pudessem comprar e baixar pacotes de música pela rede da operadora." }, { "subtitle": "Design da solução", "text": "O app oferece paradas por gênero, playlists sazonais, favoritos e atualizações, mantendo clara a quantidade mensal de músicas." }, { "subtitle": "Um início simples", "text": "Login, assinatura e seleção de playlists foram desenhados para serem rápidos e diretos." }] }
+      }
+    }
   ]
 }
