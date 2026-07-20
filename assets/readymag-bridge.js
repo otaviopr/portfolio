@@ -12,7 +12,6 @@
     const about = firstMatching(root,/I have a great passion|Tenho grande paixão/i); if (about) setText(about,t.hero?.description);
     const aboutText = firstMatching(root,/designer with a passion|designer e tenho paixão/i); if (aboutText) setText(aboutText,t.about?.text);
     root.querySelectorAll('a').forEach(link => { if (/resume|curr[ií]culo/i.test(clean(link.textContent)) && site.links?.resume) link.href = site.links.resume; });
-    updateImage(root,'upload-88d55df9-ddc9-431d-9f53-483306cc1c2d',site.home?.banner);
   }
   function project(root, site, routeInfo) {
     const project = site.projects?.find(item => item.slug === routeInfo.slug); if (!project) return;
@@ -24,7 +23,6 @@
     const bodies = [...root.querySelectorAll('h4 span')].filter(node => clean(node.textContent).length > 80);
     t.sections?.forEach((section,index) => setText(bodies[index],section.text));
     root.querySelectorAll('a').forEach(link => { if (/resume|curr[ií]culo/i.test(clean(link.textContent)) && site.links?.resume) link.href = site.links.resume; });
-    if (project.banner) { const picture = root.querySelector('.widget-picture img'); if (picture) picture.src = project.banner; }
   }
   fetch('/content/site.json').then(response => response.ok ? response.json() : null).then(initialSite => {
     if (!initialSite) return; let site = initialSite; const info = route(); let attempts = 0;
