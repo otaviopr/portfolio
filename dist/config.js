@@ -11,7 +11,3 @@ window.chunkURL = "/dist/";
 var cmsBridge = document.createElement('script');
 cmsBridge.src = '/assets/readymag-bridge.js';
 document.head.appendChild(cmsBridge);
-
-var cmsBridge = document.createElement('script');
-cmsBridge.src = '/assets/readymag-bridge.js';
-document.head.appendChild(cmsBridge);
