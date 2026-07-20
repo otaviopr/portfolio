@@ -28,7 +28,8 @@
   }
   fetch('/content/site.json').then(response => response.ok ? response.json() : null).then(site => {
     if (!site) return; const info = route(); let attempts = 0;
-    const apply = () => { const root = document.querySelector('#mags'); if (!root || !root.children.length) return false; if (info) project(root,site,info); else home(root,site,location.pathname.toLowerCase().includes('/pt') ? 'pt' : 'en'); return true; };
-    const timer = setInterval(() => { if (apply() || ++attempts > 40) clearInterval(timer); },250);
+    const apply = () => { const root = document.querySelector('#mags'); if (!root || !root.querySelector('.rmwidget')) return false; if (info) project(root,site,info); else home(root,site,location.pathname.toLowerCase().includes('/pt') ? 'pt' : 'en'); return true; };
+    const observer = new MutationObserver(() => apply()); observer.observe(document.documentElement,{childList:true,subtree:true});
+    const timer = setInterval(() => { apply(); if (++attempts > 120) { clearInterval(timer); observer.disconnect(); } },250);
   }).catch(() => {});
 })();
