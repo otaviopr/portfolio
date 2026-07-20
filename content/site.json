@@ -1,17 +1,18 @@
 {
+  "links": { "resume": "" },
   "home": {
     "banner": "../img/5d96001aea3dde00882f4440/1569895/upload-88d55df9-ddc9-431d-9f53-483306cc1c2d.jpg"
   },
   "translations": {
     "en": {
-      "nav": { "work": "Work", "about": "About" },
+      "nav": { "work": "Work", "about": "About", "resume": "Resume" },
       "hero": { "kicker": "PRODUCT · USER EXPERIENCE · INTERFACE", "title": "Hi! I’m Otávio Ribeiro", "description": "I create rich experiences for brands and products that are clear, useful and memorable." },
       "work": { "label": "Selected work" },
       "about": { "label": "About", "text": "I’m a designer with a passion for creating thoughtful digital experiences. I work across strategy, product and visual design to turn ideas into things people enjoy using.", "contact": "Let’s work together ↗" },
       "back": "All work"
     },
     "pt": {
-      "nav": { "work": "Projetos", "about": "Sobre" },
+      "nav": { "work": "Projetos", "about": "Sobre", "resume": "Currículo" },
       "hero": { "kicker": "PRODUTO · EXPERIÊNCIA · INTERFACE", "title": "Olá! Eu sou Otávio Ribeiro", "description": "Eu crio experiências ricas para marcas e produtos que são claras, úteis e memoráveis." },
       "work": { "label": "Projetos selecionados" },
       "about": { "label": "Sobre", "text": "Sou designer e tenho paixão por criar experiências digitais cuidadosas. Trabalho entre estratégia, produto e design visual para transformar ideias em coisas que as pessoas gostam de usar.", "contact": "Vamos trabalhar juntos ↗" },

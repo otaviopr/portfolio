@@ -36,8 +36,9 @@
       <div class="language-bar" data-language-bar></div>
       <div class="editor-grid">
         <section class="card wide"><div class="card-title"><div><span class="number">01</span><h2>Hero banner</h2></div><p>The main image shown at the top of your home page.</p></div>
-          <div class="image-field" data-image-field="home.banner"><div class="image-preview hero"><span>⌁</span><img alt="Banner preview"></div><div><h3>Home banner</h3><p>Paste an image URL or a path already in this repository.</p><input class="image-url" data-image-url="home.banner" placeholder="e.g. img/my-banner.jpg"></div></div>
+          <div class="image-field" data-image-field="home.banner"><div class="image-preview hero"><span>⌁</span><img alt="Banner preview"></div><div><h3>Home banner</h3><p>Paste a URL/path, or upload an image.</p><input class="image-url" data-image-url="home.banner" placeholder="e.g. img/my-banner.jpg"><label class="button outline">Upload image<input type="file" accept="image/*" data-upload="home.banner"></label></div></div>
         </section>
+        <section class="card wide"><div class="card-title"><div><span class="number">03</span><h2>About &amp; menu</h2></div><p>About text, contact label and the Resume menu link.</p></div><div class="fields two"><label>About text<textarea data-field="home.about.text" rows="5"></textarea></label><label>Contact label<input data-field="home.about.contact"></label><label>Resume link<input data-global-field="links.resume" placeholder="https://… or /files/resume.pdf"></label></div></section>
         <section class="card wide"><div class="card-title"><div><span class="number">02</span><h2>Introduction</h2></div><p>Translated separately for every language.</p></div>
           <div class="fields two"><label>Headline<input data-field="home.hero.title" placeholder="e.g. Hi! I'm Otávio Ribeiro"></label><label>Short description<textarea data-field="home.hero.description" rows="5" placeholder="Tell visitors a little about yourself…"></textarea></label></div>
         </section>
@@ -50,11 +51,11 @@
     </section>
 
     <section class="page hidden" id="project-editor-view">
-      <div class="page-heading compact"><div><button class="back" id="back-to-projects">← All projects</button><p class="eyebrow">PROJECT CONTENT</p><h1 id="project-name">Project</h1></div><button class="danger" id="delete-project">Delete project</button></div>
+      <div class="page-heading compact"><div><button class="back" id="back-to-projects">← All projects</button><p class="eyebrow">PROJECT CONTENT</p><h1 id="project-name">Project</h1></div><div class="button-row"><button class="preview" id="duplicate-project">Duplicate</button><button class="danger" id="delete-project">Delete project</button></div></div>
       <div class="language-bar" data-language-bar></div>
       <div class="editor-grid">
         <section class="card wide"><div class="card-title"><div><span class="number">01</span><h2>Project banner</h2></div><p>Visual cover for the project page.</p></div>
-          <div class="image-field" data-image-field="project.banner"><div class="image-preview project-cover"><span>⌁</span><img alt="Project banner preview"></div><div><h3>Project cover</h3><p>Paste an image URL or a path already in this repository.</p><input class="image-url" data-image-url="project.banner" placeholder="e.g. img/project-cover.jpg"></div></div>
+          <div class="image-field" data-image-field="project.banner"><div class="image-preview project-cover"><span>⌁</span><img alt="Project banner preview"></div><div><h3>Project cover</h3><p>Paste a URL/path, or upload an image.</p><input class="image-url" data-image-url="project.banner" placeholder="e.g. img/project-cover.jpg"><label class="button outline">Upload image<input type="file" accept="image/*" data-upload="project.banner"></label></div></div>
         </section>
         <section class="card wide"><div class="card-title"><div><span class="number">02</span><h2>Project details</h2></div><p>Key details displayed at the top of the case study.</p></div>
           <div class="fields two"><label>Project title<input data-field="project.title" placeholder="Project name"></label><label>Tools used<input data-field="project.tools" placeholder="e.g. Figma, After Effects, Webflow"></label><label>Roles / activities<textarea data-field="project.roles" rows="4" placeholder="e.g. UX strategy, Art direction…"></textarea></label><label>Intro text<textarea data-field="project.intro" rows="4" placeholder="A concise overview of the project…"></textarea></label></div>
