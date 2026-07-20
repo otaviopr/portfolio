@@ -1,4 +1,5 @@
 (() => {
+  if (window.matchMedia('(max-width: 700px)').matches) return;
   const routes = { om:'operations-and-maintenance', mobnit:'mobnit', cm:'music-streaming-rebrand', rbt:'ringback-tone-service', tracs:'tracs', hospitality:'hospitality', assets:'open-medicine', open:'open-medicine' };
   const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
   const route = () => { const path = location.pathname.toLowerCase(); for (const [key,slug] of Object.entries(routes)) { const m = path.match(new RegExp('(?:/|^)' + key + '-(en|pt)(?:/|$)')); if (m) return {slug,lang:m[1]}; } return null; };
