@@ -7,7 +7,7 @@ let db, language = 'en', activeProject = null, activeView = 'home', dirty = fals
 
 function translations(item) { return item.translations[language] || item.translations.en; }
 function markDirty() { dirty = true; $('#save-status').textContent = 'Changes not published'; sendPreview(); }
-function previewUrl() { return activeView === 'project-editor' && activeProject ? `../project.html?slug=${encodeURIComponent(activeProject)}&lang=${encodeURIComponent(language)}` : '../'; }
+function previewUrl() { const routes = {hospitality:'hospitality', 'operations-and-maintenance':'om', mobnit:'mobnit', 'music-streaming-rebrand':'cm', 'ringback-tone-service':'rbt', tracs:'tracs', 'open-medicine':'assets'}; const page = routes[activeProject]; return activeView === 'project-editor' && page ? `../${page}-${language}/` : '../'; }
 function sendPreview() { const frame = $('#preview-frame'); if (frame?.contentWindow) frame.contentWindow.postMessage({type:'otavio-cms-preview', content:db}, location.origin); }
 function openPreview() { const panel = $('#live-preview'); panel.classList.remove('hidden'); document.body.classList.add('previewing'); const frame = $('#preview-frame'); const url = previewUrl(); if (frame.dataset.url !== url) { frame.dataset.url = url; frame.src = url; } else sendPreview(); }
 function fallbackTranslation(template) { return clone(template || { title:'', tools:'', roles:'', intro:'', sections:[] }); }
