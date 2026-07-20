@@ -1,0 +1,13 @@
+name = "otavio-portfolio-auth"
+main = "src/index.js"
+compatibility_date = "2026-07-19"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+[vars]
+GITHUB_OWNER = "otaviopr"
+GITHUB_REPO = "portfolio"
+GITHUB_BRANCH = "main"
+ADMIN_ORIGIN = "https://YOUR-DOMAIN/admin/"

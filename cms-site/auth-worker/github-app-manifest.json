@@ -1,0 +1,12 @@
+{
+  "name": "Otávio Portfolio CMS",
+  "url": "https://YOUR-DOMAIN",
+  "hook_attributes": { "active": false },
+  "redirect_url": "https://YOUR-WORKER.workers.dev/auth/callback",
+  "public": false,
+  "default_permissions": {
+    "contents": "write",
+    "metadata": "read"
+  },
+  "default_events": []
+}
