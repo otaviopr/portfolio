@@ -14,16 +14,34 @@
   <link rel="stylesheet" href="https://st-p.rmcdn1.net/0ce36744/dist/viewer.css">
   <script>
     (() => {
+      const fitHeroBanner = () => {
+        const outer = document.querySelector(".page-content-container > .animation-container");
+        if (!outer) return;
+        const width = Math.max(window.innerWidth, 1024);
+        const center = width / 2;
+        outer.style.left = `${(1024 - width) / 2}px`;
+        outer.style.width = `${width}px`;
+        outer.style.offsetPath = `path("M ${center} 300 C ${center} 300 ${center} 900 ${center} 900")`;
+        const inner = outer.querySelector(".animation-container");
+        const picture = outer.querySelector(".widget-picture.full-width");
+        if (inner) {
+          inner.style.width = `${width}px`;
+          inner.style.offsetPath = `path("M ${center} 300 C ${center} 300 ${center} -300 ${center} -300")`;
+        }
+        if (picture) picture.style.width = `${width}px`;
+      };
       const fitPage = () => {
         const scale = Math.min(window.innerWidth / 1024, 1);
         document.documentElement.style.setProperty("--page-scale", String(scale));
         document.documentElement.style.setProperty("--page-height", `${3890 * scale}px`);
+        fitHeroBanner();
       };
       fitPage();
       window.addEventListener("resize", fitPage);
       window.addEventListener("DOMContentLoaded", () => {
         const banner = document.querySelector(".fixed-position-container");
         if (banner) document.body.appendChild(banner);
+        fitHeroBanner();
       });
     })();
   </script>
@@ -37,6 +55,7 @@
     #mags { position: static !important; width: 1024px; height: auto !important; margin: 0 auto; transform: none !important; }
     .page { display: block !important; }
     .animation-container.invisible { opacity: 1 !important; visibility: visible !important; }
+    .page-content-container > .animation-container:nth-child(2) { z-index: 310 !important; }
     .fixed-position-container {
       position: fixed !important;
       top: 0 !important;
@@ -120,11 +139,11 @@
     <div class="tip viewer invisible" style="border-radius: 40px;"><div class="blocks-wrapper" style="background-color: rgb(60, 33, 255); border-radius: 40px;"><div class="rmwidget widget-text-v3 inside-hotspot" data-id="6a6524790cd439a8e8be7706" style="left: 0px; top: 0px; width: 240px; height: 37px; z-index: 1;"><div class="css-1h09ne"><div class="text-viewer"><p style="line-height:8px;padding-left:19px;padding-right:19px;padding-top:13px;padding-bottom:16px" class="view-mode unstyled align-center"><span style="font-size:14px;font-weight:300;font-family:lvyt;font-style:normal;letter-spacing:2.4000000953674316px;text-decoration:none;text-transform:none;color:rgba(255, 255, 255, 1)"><a role="link" tabindex="0" class="link-006e71ce-bb28-4dc2-b5ee-528c4b23099a maglink close-tip-on-click" target="_self">português</a></span></p></div></div></div></div><div class="hotspot-phone-close"></div></div></div></div></div>
     <div class="content-scroll-wrapper has-vertical-scroll">
       <div class="content-bounds" style="width: 1024px; height: 3890px;">
-        <div class="page-content-container" style="width: 1024px; height: 3890px; top: 0px; left: 0px; zoom: 1;"><div class="animation-container" style="left: 0px; top: -600px; width: 1024px; height: 600px; z-index: 303; offset-path: path(&quot;M 512 300 C 512 300 512 900 512 900&quot;); offset-rotate: 0deg; opacity: 1; offset-distance: 600px;"><style class="">@keyframes animation_1_1 {
+        <div class="page-content-container" style="width: 1024px; height: 3890px; top: 0px; left: 0px; zoom: 1;"><div class="animation-container" style="left: 0px; top: -600px; width: 1024px; height: 600px; z-index: 309; offset-path: path(&quot;M 512 300 C 512 300 512 900 512 900&quot;); offset-rotate: 0deg; opacity: 1; offset-distance: 600px;"><style class="">@keyframes animation_1_1 {
 	0% {opacity: 1; offset-distance: 0px; animation-timing-function: ease-in-out}
 	100% {opacity: 1; offset-distance: 600px; }
 }
-</style><div class="animation-container" style="left: 0px; top: 0px; width: 1024px; height: 600px; margin-left: 0px; margin-top: 0px; z-index: 303; offset-path: path(&quot;M 512 300 C 512 300 512 -300 512 -300&quot;); offset-rotate: 0deg; offset-distance: 0px; opacity: 1;"><div class="rmwidget widget-picture full-width fixMobileImageStretch" data-id="6a6524790cd439a8e8be76e0" style="left: 0px; top: 0px; width: 1024px; height: 600px; z-index: 303;"><div class="bgpic" url="https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png" style="background-image: url(&quot;https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png&quot;); background-position: 50% 50%; box-shadow: none; border-radius: 0px; opacity: 1;"></div><img src="https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png" class="viewable saveable" style="opacity: 1;"></div></div></div><div class="animation-container" style="left: 13px; top: 260px; width: 473px; height: 173px; z-index: 305; offset-path: path(&quot;M 236.5 86.5&quot;); offset-rotate: 0deg; opacity: 1; offset-distance: 0px;"><style class="">@keyframes animation_2_1 {
+</style><div class="animation-container" style="left: 0px; top: 0px; width: 1024px; height: 600px; margin-left: 0px; margin-top: 0px; z-index: 309; offset-path: path(&quot;M 512 300 C 512 300 512 -300 512 -300&quot;); offset-rotate: 0deg; offset-distance: 0px; opacity: 1;"><div class="rmwidget widget-picture full-width fixMobileImageStretch" data-id="6784288126f23c73f8926423" style="left: 0px; top: 0px; width: 1024px; height: 600px; z-index: 309;"><div class="bgpic" url="https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png" style="background-image: url(&quot;https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png&quot;); background-position: 50% 50%; box-shadow: none; border-radius: 0px; opacity: 1;"></div><img src="https://i-p.rmcdn.net/5d96001aea3dde00882f4440/6471815/image-d347ac92-0824-4d09-a269-584c1e0e50e7.png" class="viewable saveable" style="opacity: 1;"></div></div></div><div class="animation-container" style="left: 13px; top: 260px; width: 473px; height: 173px; z-index: 305; offset-path: path(&quot;M 236.5 86.5&quot;); offset-rotate: 0deg; opacity: 1; offset-distance: 0px;"><style class="">@keyframes animation_2_1 {
 	0%, 37.49999999999999% {opacity: 0; offset-distance: 0px; animation-timing-function: ease-in-out}
 	100% {opacity: 1; offset-distance: 0px; }
 }
