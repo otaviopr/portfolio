@@ -21,6 +21,10 @@
       };
       fitPage();
       window.addEventListener("resize", fitPage);
+      window.addEventListener("DOMContentLoaded", () => {
+        const banner = document.querySelector(".fixed-position-container");
+        if (banner) document.body.appendChild(banner);
+      });
     })();
   </script>
   <style>
@@ -33,6 +37,17 @@
     #mags { position: static !important; width: 1024px; height: auto !important; margin: 0 auto; transform: none !important; }
     .page { display: block !important; }
     .animation-container.invisible { opacity: 1 !important; visibility: visible !important; }
+    .fixed-position-container {
+      position: fixed !important;
+      top: 0 !important;
+      left: 50% !important;
+      width: 1024px !important;
+      height: 100vh !important;
+      transform: translateX(-50%) !important;
+      z-index: 1000 !important;
+      pointer-events: none;
+    }
+    .fixed-position-container > * { pointer-events: auto; }
     .madonna-video { position: absolute; overflow: hidden; background: #111; }
     .madonna-video iframe { display: block; width: 100%; height: 100%; border: 0; }
     [data-id="6a6524790cd439a8e8be76d7"],
@@ -40,7 +55,10 @@
     [data-id="6a652782d0cd9086d4d9b937"],
     [data-id="6a652783e634c8d0bf2135c9"],
     [data-id="6a652af31dd5c0c8766e169c"],
-    [data-id="6a652af325ae540d1e9a2325"] { display: none !important; }
+    [data-id="6a652af325ae540d1e9a2325"],
+    [data-id="6a652ac366f02b8c589dadf5"],
+    [data-id="6a652b3ceb65fbefd58207e0"],
+    [data-id="6a652d14fb3c4848d5b5dec2"] { display: none !important; }
     .restored-copy { position: absolute; margin: 0; font-family: "lvyt", sans-serif; }
     .restored-copy--heading { z-index: 406; color: #3c21ff; font-size: 21px; font-weight: 700; line-height: 26px; }
     .restored-copy--body { z-index: 407; color: #606060; font-size: 18px; font-weight: 300; line-height: 24px; }
@@ -53,19 +71,25 @@
         transform: scale(var(--page-scale)) !important;
         transform-origin: 0 0;
       }
+      .fixed-position-container {
+        left: 0 !important;
+        height: calc(100vh / var(--page-scale)) !important;
+        transform: scale(var(--page-scale)) !important;
+        transform-origin: 0 0;
+      }
     }
   </style>
 </head>
 <body>
 <div id="mags"><article class="page page-with-fixeds-desktop" style="overflow: hidden; height: 3890px; width: 1024px; position: relative;">
     <div class="madonna-video" style="left:99px;top:2616px;width:829px;height:480px;z-index:321;">
-      <iframe src="https://player.vimeo.com/video/1212946089?dnt=1" title="Vinheta Rio — monitores" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1212946089?title=0&amp;byline=0&amp;portrait=0" title="Vinheta Rio — monitores" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="madonna-video" style="left:96px;top:3120px;width:325px;height:600px;z-index:324;">
-      <iframe src="https://player.vimeo.com/video/1212949832?dnt=1" title="Vídeo para telão — Caixa Cultural" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1212949832?title=0&amp;byline=0&amp;portrait=0" title="Vídeo para telão — Caixa Cultural" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="madonna-video" style="left:433px;top:3120px;width:339px;height:600px;z-index:325;">
-      <iframe src="https://player.vimeo.com/video/1212950460?dnt=1" title="Vídeo Rio — Reels" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/1212950460?title=0&amp;byline=0&amp;portrait=0" title="Vídeo Rio — Reels" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <h2 class="restored-copy restored-copy--heading" style="left:13px;top:984px;width:493px;">Artes de divulgação física</h2>
     <p class="restored-copy restored-copy--body" style="left:96px;top:1032px;width:580px;">Diversas artes foram criadas, como folders, catálogo, cartazes A1 e A3, plotagens e diversos impressos para divulgação.</p>
