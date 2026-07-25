@@ -30,6 +30,19 @@
         }
         if (picture) picture.style.width = `${width}px`;
       };
+      const playHeroBanner = () => {
+        const outer = document.querySelector(".page-content-container > .animation-container");
+        if (!outer) return;
+        outer.style.animation = "none";
+        outer.style.offsetDistance = "0px";
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          outer.style.animation = "animation_1_1 0.5s both";
+          outer.addEventListener("animationend", () => {
+            outer.style.offsetDistance = "600px";
+            outer.style.animation = "none";
+          }, { once: true });
+        }));
+      };
       const fitPage = () => {
         const scale = Math.min(window.innerWidth / 1024, 1);
         document.documentElement.style.setProperty("--page-scale", String(scale));
@@ -42,6 +55,7 @@
         const banner = document.querySelector(".fixed-position-container");
         if (banner) document.body.appendChild(banner);
         fitHeroBanner();
+        playHeroBanner();
       });
     })();
   </script>
